@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/mesto-react/static/css/main.5fb60e56.css",
+    "main.js": "/mesto-react/static/js/main.bd3bf192.js",
+    "static/js/787.5530211c.chunk.js": "/mesto-react/static/js/787.5530211c.chunk.js",
+    "static/media/Inter-Black.ttf": "/mesto-react/static/media/Inter-Black.24d6be6c502d39fb3ce1.ttf",
+    "static/media/Inter-Medium.ttf": "/mesto-react/static/media/Inter-Medium.e7231ba33760832432b8.ttf",
+    "static/media/Inter-Regular.ttf": "/mesto-react/static/media/Inter-Regular.2391725004ae05a27e8e.ttf",
+    "static/media/icon-like.svg": "/mesto-react/static/media/icon-like.e3b9ba5840ebe97bc077.svg",
+    "index.html": "/mesto-react/index.html",
+    "static/media/icon-del.svg": "/mesto-react/static/media/icon-del.ce3b64935accf9b8212e.svg",
+    "static/media/icon-like_active.svg": "/mesto-react/static/media/icon-like_active.35948469632d0421d697.svg",
+    "static/media/icon-edit.svg": "/mesto-react/static/media/icon-edit.6c7bf05444b9793fdf6e.svg",
+    "static/media/icon-close.svg": "/mesto-react/static/media/icon-close.039f1f5203f653b4bacd.svg",
+    "static/media/icon-add.svg": "/mesto-react/static/media/icon-add.bed8c136e13907f5eefb.svg",
+    "main.5fb60e56.css.map": "/mesto-react/static/css/main.5fb60e56.css.map",
+    "main.bd3bf192.js.map": "/mesto-react/static/js/main.bd3bf192.js.map",
+    "787.5530211c.chunk.js.map": "/mesto-react/static/js/787.5530211c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5fb60e56.css",
+    "static/js/main.bd3bf192.js"
+  ]
+}
