@@ -1,19 +1,19 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
-import PopupWithForm from "./components/PopupWithForm";
-import ImagePopup from "./components/ImagePopup";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
+import PopupWithForm from "./PopupWithForm";
+import ImagePopup from "./ImagePopup";
 import React from "react";
 
 function App() {
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] =
+    React.useState(false);
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] =
+    React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isConfirmPopupOpen, setIsConfirmPopupOpen] = React.useState(false);
   const [isImagePopupOpen, setIsImagePopupOpen] = React.useState(false);
   const [currentCard, setCurrentCard] = React.useState(null);
-
-
 
   function handleImageCardClick(card) {
     setCurrentCard(card);
@@ -59,7 +59,7 @@ function App() {
         children={
           <form className="popup__form" name="edit-profile" noValidate>
             <input
-              defaultValue={''}
+              defaultValue={""}
               className="popup__input popup__input_type_name"
               id="edit-name"
               required
@@ -70,7 +70,7 @@ function App() {
             />
             <span className="popup__input-error error-edit-name"></span>
             <input
-              defaultValue={''}
+              defaultValue={""}
               className="popup__input popup__input_type_description"
               id="edit-description"
               required
@@ -96,7 +96,7 @@ function App() {
         children={
           <form className="popup__form" name="add-card" noValidate>
             <input
-              defaultValue={''}
+              defaultValue={""}
               className="popup__input popup__input_type_name-card"
               id="card-name"
               required
@@ -109,7 +109,7 @@ function App() {
             <span className="popup__input-error error-card-name"></span>
 
             <input
-              defaultValue={''}
+              defaultValue={""}
               className="popup__input popup__input_type_link-card"
               id="card-link"
               required
@@ -138,7 +138,7 @@ function App() {
         children={
           <form className="popup__form" name="edit-avatar" noValidate>
             <input
-              defaultValue={''}
+              defaultValue={""}
               className="popup__input popup__input_type_avatar-link"
               id="avatar-link"
               required
