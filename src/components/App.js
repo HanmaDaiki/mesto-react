@@ -43,7 +43,14 @@ function App() {
   function handleUpdateAvatar(link) {
     api
       .patchAvatar(link)
-      .then()
+      .then((user) => {
+        setCurrentUser({
+          name: user.name,
+          about: user.about,
+          avatar: user.avatar,
+          id: user._id
+        });
+      })
   }
 
   function handleUpdateUser(user) {
@@ -93,7 +100,7 @@ function App() {
 
           <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser}/>
 
-          <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={}/>
+          <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar}/>
 
           <PopupWithForm
             name={"add-card"}
