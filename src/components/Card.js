@@ -29,13 +29,15 @@ function Card({ card, onCardClick, onCardLike, onDeleteCard }) {
       />
       <h2 className="card__title">{card.name}</h2>
       <div className="card__like">
-        <button className={cardLikeButtonClass} onClick={handleLikeClick}></button>
+        <button
+          className={cardLikeButtonClass}
+          onClick={handleLikeClick}
+        ></button>
         <span className="card__like-counter">{card.likes.length}</span>
       </div>
-      {
-        isOwn &&
+      {isOwn && (
         <button className="card__delete" onClick={handleDeleteClick}></button>
-      }
+      )}
     </article>
   );
 }

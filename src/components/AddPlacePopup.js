@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import PopupWithForm from "./PopupWithForm";
 
-function AddPlacePopup({isOpen, onClose, onAddPlace}) {
-  const [name, setName] = useState('');
-  const [link, setLink] = useState('');
+function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
+  const [name, setName] = useState("");
+  const [link, setLink] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
 
     onAddPlace({
       name,
-      link
+      link,
     });
     onClose();
   }
@@ -58,10 +58,7 @@ function AddPlacePopup({isOpen, onClose, onAddPlace}) {
           />
           <span className="popup__input-error error-card-link"></span>
 
-          <button
-            className="popup__save"
-            type="submit"
-          >
+          <button className="popup__save" type="submit">
             Сохранить
           </button>
         </>

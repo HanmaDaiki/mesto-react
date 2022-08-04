@@ -1,14 +1,14 @@
-import {useRef} from 'react';
+import { useRef } from "react";
 import PopupWithForm from "./PopupWithForm";
 
-function EditAvatarPopup({isOpen, onClose, onUpdateAvatar}) {
+function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
   const avaRef = useRef();
 
   function handleSubmit(e) {
     e.preventDefault();
 
     onUpdateAvatar({
-      avatar: avaRef.current.value
+      avatar: avaRef.current.value,
     });
     onClose();
   }
@@ -33,10 +33,7 @@ function EditAvatarPopup({isOpen, onClose, onUpdateAvatar}) {
           />
           <span className="popup__input-error error-avatar-link"></span>
 
-          <button
-            className="popup__save"
-            type="submit"
-          >
+          <button className="popup__save" type="submit">
             Сохранить
           </button>
         </>

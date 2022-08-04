@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 import PopupWithForm from "./PopupWithForm";
-import {CurrentUserContext} from "../contexts/CurrentUserContext";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function EditProfilePopup(props) {
   const currentUser = React.useContext(CurrentUserContext);
@@ -20,7 +20,7 @@ function EditProfilePopup(props) {
 
     props.onUpdateUser({
       name,
-      about
+      about,
     });
 
     props.onClose();
@@ -39,7 +39,7 @@ function EditProfilePopup(props) {
       onClose={props.onClose}
       onSubmit={handleSubmit}
       children={
-      <>
+        <>
           <input
             onChange={handleChangeName}
             defaultValue={name}
@@ -67,7 +67,7 @@ function EditProfilePopup(props) {
           <button className="popup__save" type="submit">
             Сохранить
           </button>
-      </>
+        </>
       }
     />
   );
