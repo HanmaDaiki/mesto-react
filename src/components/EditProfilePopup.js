@@ -36,6 +36,7 @@ function EditProfilePopup({ onUpdateUser, isOpen, onClose }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      buttonText={'Сохранить'}
       children={
         <>
           <input
@@ -62,9 +63,6 @@ function EditProfilePopup({ onUpdateUser, isOpen, onClose }) {
             maxLength="200"
           />
           <span className="popup__input-error error-edit-description"></span>
-          <button className="popup__save" type="submit">
-            Сохранить
-          </button>
         </>
       }
     />

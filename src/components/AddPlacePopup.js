@@ -36,6 +36,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      buttonText={'Создать'}
       children={
         <>
           <input
@@ -63,10 +64,6 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
             onChange={handleChangeLink}
           />
           <span className="popup__input-error error-card-link"></span>
-
-          <button className="popup__save" type="submit">
-            Создать
-          </button>
         </>
       }
     />

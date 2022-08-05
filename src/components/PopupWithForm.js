@@ -7,6 +7,7 @@ function PopupWithForm({
   isOpen = false,
   onClose,
   onSubmit,
+  buttonText
 }) {
   if (isOpen) {
     return (
@@ -26,6 +27,9 @@ function PopupWithForm({
             onSubmit={onSubmit}
           >
             {children}
+            <button className="popup__save" type="submit">
+              {buttonText}
+            </button>
           </form>
         </div>
       </div>

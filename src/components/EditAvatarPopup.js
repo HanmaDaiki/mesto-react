@@ -19,6 +19,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
+      buttonText={'Сохранить'}
       children={
         <>
           <input
@@ -32,10 +33,6 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
             ref={avaRef}
           />
           <span className="popup__input-error error-avatar-link"></span>
-
-          <button className="popup__save" type="submit">
-            Сохранить
-          </button>
         </>
       }
     />
