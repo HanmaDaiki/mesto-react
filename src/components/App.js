@@ -4,27 +4,25 @@ import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../utils/Api";
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
 
 function App() {
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] =
-    React.useState(false);
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] =
-    React.useState(false);
-  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  const [isConfirmPopupOpen, setIsConfirmPopupOpen] = React.useState(false);
-  const [isImagePopupOpen, setIsImagePopupOpen] = React.useState(false);
-  const [currentCard, setCurrentCard] = React.useState(null);
-  const [currentUser, setCurrentUser] = React.useState({
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+  const [isConfirmPopupOpen, setIsConfirmPopupOpen] = useState(false);
+  const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
+  const [currentCard, setCurrentCard] = useState(null);
+  const [currentUser, setCurrentUser] = useState({
     name: "Имя",
     about: "Описание",
     avatar: "https://dummyimage.com/600x400/000/fff.png",
   });
-  const [cards, setCards] = React.useState([]);
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
     api
@@ -93,6 +91,9 @@ function App() {
           id: user._id,
         });
       })
+      .then(() => {
+        closeAllPopups();
+      })
       .catch((err) => {
         console.log(`В апи patchAvatar ошибка - ${err}`);
       });
@@ -104,6 +105,9 @@ function App() {
       .then((updateUserInfo) => {
         setCurrentUser(updateUserInfo);
       })
+      .then(() => {
+        closeAllPopups();
+      })
       .catch((err) => {
         console.log(`В апи editInfoUser ошибка - ${err}`);
       });
@@ -114,6 +118,9 @@ function App() {
       .addNewCard(card)
       .then((card) => {
         setCards([card, ...cards]);
+      })
+      .then(() => {
+        closeAllPopups();
       })
       .catch((err) => {
         console.log(`В апи editInfoUser ошибка - ${err}`);

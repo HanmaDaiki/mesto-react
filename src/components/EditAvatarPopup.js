@@ -10,7 +10,6 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
     onUpdateAvatar({
       avatar: avaRef.current.value,
     });
-    onClose();
   }
 
   return (
@@ -23,6 +22,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
       children={
         <>
           <input
+            defaultValue={""}
             className="popup__input popup__input_type_avatar-link"
             id="avatar-link"
             required

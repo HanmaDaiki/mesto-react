@@ -1,5 +1,5 @@
-import React from "react";
-import {CurrentUserContext} from "../contexts/CurrentUserContext";
+import { useContext } from "react";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function Card({ card, onCardClick, onCardLike, onDeleteCard }) {
   function handleClick() {
@@ -14,17 +14,19 @@ function Card({ card, onCardClick, onCardLike, onDeleteCard }) {
     onDeleteCard(card);
   }
 
-  const user = React.useContext(CurrentUserContext);
-  const isOwn = (user.id === card.owner._id);
-  const isLiked = card.likes.some(like => like._id === user.id);
-  const cardLikeButtonClass = `${isLiked ? 'card__like-button card__like-button_active' : 'card__like-button'}`
+  const user = useContext(CurrentUserContext);
+  const isOwn = user.id === card.owner._id;
+  const isLiked = card.likes.some((like) => like._id === user.id);
+  const cardLikeButtonClass = `${
+    isLiked ? "card__like-button card__like-button_active" : "card__like-button"
+  }`;
 
   return (
     <article className="card">
       <img
         className="card__image"
         src={card.link}
-        alt=""
+        alt={`А тут была картинка с названием ${card.name}`}
         onClick={handleClick}
       />
       <h2 className="card__title">{card.name}</h2>

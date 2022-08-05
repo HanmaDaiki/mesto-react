@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
+
+  useEffect(() => {
+    if (isOpen) {
+      setName("");
+      setLink("");
+    }
+  }, [isOpen]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -12,7 +19,6 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
       name,
       link,
     });
-    onClose();
   }
 
   function handleChangeName(e) {
@@ -33,7 +39,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
       children={
         <>
           <input
-            defaultValue={""}
+            value={name}
             className="popup__input popup__input_type_name-card"
             id="card-name"
             required
@@ -47,7 +53,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
           <span className="popup__input-error error-card-name"></span>
 
           <input
-            defaultValue={""}
+            value={link}
             className="popup__input popup__input_type_link-card"
             id="card-link"
             required
@@ -59,7 +65,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
           <span className="popup__input-error error-card-link"></span>
 
           <button className="popup__save" type="submit">
-            Сохранить
+            Создать
           </button>
         </>
       }
